@@ -43,7 +43,7 @@ dlist* spiralPrint(node* root){
         while(!s1.empty()){
             node* top = s1.top();
             s1.pop();
-            cout<<top->data<<endl;
+            //cout<<top->data<<endl;
             if(spiral == NULL){
                 spiral = newDlistNode(top->data);
             }else{
@@ -66,7 +66,7 @@ dlist* spiralPrint(node* root){
         while(!s2.empty()){
             node* top = s2.top();
             s2.pop();
-            cout<<top->data<<endl;
+            //cout<<top->data<<endl;
             if(spiral == NULL){
                 spiral = newDlistNode(top->data);
             }else{
@@ -103,12 +103,14 @@ int main(){
     root->right->right = newNode(7);
     dlist* head = spiralPrint(root);
     dlist* tail;
+    cout<<"Forward Traversal:"<<endl;
     while(head!=NULL){
         tail = head;
         cout<<head->data<<' ';
         head = head->next;
     }
     cout<<endl;
+    cout<<"Backward Traversal:"<<endl;
     dlist* temp = tail;
     while(temp!=NULL){
         cout<<temp->data<<' ';
